@@ -1,0 +1,26 @@
+
+<!-- !1. Single Hero with static data -->
+<!-- <h2>{{ hero.name | uppercase}}'s Details</h2> -->
+<!-- <div><span>ID: </span>{{ hero.id }}</div>
+<div><span>Name: </span>{{ hero.name }}</div> -->
+
+<!-- !2. Two-way Binding below! -->
+<!-- <h2>{{ hero.name | uppercase}}'s Details</h2> -->
+<!-- <div>
+    <label for="name">Hero's Name: </label>
+    <input id="name" [(ngModel)]="hero.name" placeholder="name">
+</div> -->
+
+<!-- !3. Multiple heroes with dynamic data -->
+<h2>My Heroes</h2>
+<ul class="heroes"> <!-- unordered list -->
+    <li *ngFor="let hero of heroes">
+        <button [class.selected]="hero === selectedHero" type="button"
+            (click)="onSelect(hero)">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+        </button>
+    </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail> <!-- one-way binding -->
