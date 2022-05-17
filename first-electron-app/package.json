@@ -1,23 +1,23 @@
 {
   "name": "first-electron-app",
   "version": "1.0.0",
-  "description": "My first ever electron app",
+  "description": "Electron Quick Start",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
   "author": "Niveytha Waran",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
     "@electron-forge/maker-deb": "^6.0.0-beta.63",
     "@electron-forge/maker-rpm": "^6.0.0-beta.63",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
-    "electron": "^18.2.0"
+    "electron": "^18.2.3"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"

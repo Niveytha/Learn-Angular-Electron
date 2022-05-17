@@ -1,3 +1,6 @@
 *.exe
 node_modules/
 expense-manager-electron-app/
+out/
+
+.DS_Store
