@@ -1,20 +1,20 @@
 @media (prefers-color-scheme: dark) {
-  body { background: #282a35; color: white; }
+  body { background: #282a35; color: white;}
+  /* select {
+    background-color: #cccccc;
+  } */
 }
 
 @media (prefers-color-scheme: light) {
-  body { background: #ddd; color: #282a35; }
+  body { background: #ddd; color: #282a35;}
 }
+
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-div {
-  /* display: table-cell; */
-  /* width: 250px; */
-  /* height: 200px; */
-  padding: 10px;
-  /* border: 3px dashed #1c87c9; */
-  vertical-align: middle;
+.center {
+  text-align: center; /* horizontal */
+  padding-top: 50px;
 }
