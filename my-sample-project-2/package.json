@@ -1,0 +1,16 @@
+{
+  "name": "stupid-discussion-sublet-zv0ip",
+  "productName": "stupid-discussion-sublet-zv0ip",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "Niveytha Waran",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "18.2.4"
+  }
+}
