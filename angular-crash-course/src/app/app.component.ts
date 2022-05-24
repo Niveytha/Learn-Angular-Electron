@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']    // CSS file
 })
 export class AppComponent {   // properties of component
-  title: string = 'Task Tracker';
 }
