@@ -20,9 +20,10 @@ body {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid #587561;
+  border: 5px solid #587561;
+  border-style: double;
+  border-radius: 20px;
   padding: 30px;
-  border-radius: 5px;
 }
 
 /* !button */
@@ -60,9 +61,11 @@ body {
 .form-control input {
   width: 100%;
   height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
+  margin: 3px;
+  padding: 5px 7px;
+  font-size: 16px;
+  border: 1.5px solid #4e5e53;
+  border-radius: 10px;
 }
 .form-control-check {
   display: flex;
@@ -70,9 +73,9 @@ body {
   justify-content: space-between;
 }
 .form-control-check label {
-  flex: 1;
+  flex: 10;
 }
 .form-control-check input {
-  flex: 2;
-  height: 20px;
+  flex: 1;
+  height: 22px;
 }
