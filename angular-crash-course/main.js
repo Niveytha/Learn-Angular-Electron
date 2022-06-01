@@ -4,9 +4,10 @@ const url = require("url");
 
 let win;
 function createWindow() {
-    const win = new BrowserWindow({
+    win = new BrowserWindow({
         width: 600,
-        height: 845
+        height: 845,
+        icon: path.join(__dirname, '/assets/Data_Simulation_Icon.ico') // NOT WORKING
     });
 
     //  load the dist folder from Angular
