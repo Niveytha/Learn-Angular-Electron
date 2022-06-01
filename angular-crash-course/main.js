@@ -4,20 +4,24 @@ const url = require("url");
 
 let win;
 function createWindow() {
-win = new BrowserWindow({ width: 600, height: 845 });
-//  load the dist folder from Angular
-win.loadURL(
-    url.format({
+    const win = new BrowserWindow({
+        width: 600,
+        height: 845
+    });
 
-    // compiled version of our app
-    pathname: path.join(__dirname, '/dist/index.html'),
-    protocol: "file:",
-    slashes: true
-    })
-);
-win.on("closed", () => {
-    win = null;
-});
+    //  load the dist folder from Angular
+    win.loadURL(
+        url.format({
+
+        // compiled version of our app
+        pathname: path.join(__dirname, '/dist/index.html'),
+        protocol: "file:",
+        slashes: true
+        })
+    );
+    win.on("closed", () => {
+        win = null;
+    });
 }
 
 app.on("ready", createWindow);

@@ -2,6 +2,8 @@
   "name": "angular-crash-course",
   "version": "0.0.0",
   "main": "main.js",
+  "description": "This is a working Task Tracker Electron & Angular app",
+  "author": "Niveytha Waran",
   "scripts": {
     "ng": "ng",
     "electron": "electron .",
