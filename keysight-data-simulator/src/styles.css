@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 /* .container {
@@ -18,29 +19,30 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
-}
+} */
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: #517DF4;
   color: #fff;
   border: none;
   padding: 10px 20px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
+  font-size: medium;
+  width: 110px;
+  height: 45px;
 }
 .btn:focus {
   outline: none;
 }
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.95);
 }
 
-.btn-block {
+/* .btn-block {
   display: block;
   width: 100%;
 }
