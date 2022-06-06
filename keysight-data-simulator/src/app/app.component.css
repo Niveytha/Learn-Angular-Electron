@@ -1,0 +1,16 @@
+.column {
+    float: left;
+  }
+  
+.sidebar {
+    background-color: #040404;
+    width: 30%;
+}
+  
+.main {
+    box-sizing: border-box;
+    background-color: #242424;
+    padding: 5%;
+    width: 70%;
+    border-left: 4px solid #393939;
+}
