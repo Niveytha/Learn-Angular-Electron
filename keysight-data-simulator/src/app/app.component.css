@@ -1,6 +1,6 @@
-body {
+/* body {
     margin: 0;
-  }
+}
 .wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -23,6 +23,6 @@ body {
     padding: 6%;
 }
 .inline {
-    /* display: inline-block; */
+    display: inline-block;
     float: right;
-}
+} */

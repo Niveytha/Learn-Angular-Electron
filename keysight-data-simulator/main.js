@@ -4,7 +4,7 @@ const url = require("url");
 
 let win;
 function createWindow() {
-win = new BrowserWindow({ width: 600, height: 845 });
+win = new BrowserWindow({ width: 1100, height: 700 });
 //  load the dist folder from Angular
 win.loadURL(
     url.format({
