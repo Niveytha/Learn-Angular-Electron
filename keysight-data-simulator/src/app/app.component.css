@@ -34,28 +34,36 @@
 body {
     font-family: Arial;
     color: white;
-  }
+}
+
+/* div {
+  border: #393939;
+} */
   
-  .split {
+.split {
     height: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
+    /* border: #393939; */
     /* padding-top: 20px; */
-  }
+}
   
-  .left {
+.left {
     width: 25%;
     left: 0;
-    background-color: #242424;
-  }
+    background-color: #040404;
+}
   
-  .right {
+.right {
     width: 75%;
+    padding: 5%;
     right: 0;
-    background-color: #393939;
-  }
+    background-color: #242424;
+    border-left: 4px solid #393939;
+    /* border-left: #393939 2px; */
+}
   
   /* .centered img {
     width: 150px;
