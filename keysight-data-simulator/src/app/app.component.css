@@ -58,14 +58,9 @@ body {
   
 .right {
     width: 75%;
-    padding: 5%;
+    padding: 10% 5% 5% 5%;
     right: 0;
     background-color: #242424;
     border-left: 4px solid #393939;
     /* border-left: #393939 2px; */
 }
-  
-  /* .centered img {
-    width: 150px;
-    border-radius: 50%;
-  } */

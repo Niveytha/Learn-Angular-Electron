@@ -76,35 +76,145 @@ body {
 /* .btn-block {
     display: block;
     width: 100%;
+} */
+
+.form-group {
+    margin-top: 12%;
+    padding-bottom: 6%;
+}
+td {
+    /* padding-top: 30px;
+    padding-bottom: 10px; */
+    height: 70px;
+}
+label {
+    /* display: block; */
+    color: #dcdcdc;
+    font-weight: bolder;
+    font-size: medium;
+    padding-right: 40px;
+}
+input {
+    max-width: 180px; /* ?OR width */
+    height: 42px;
+    padding: 15px;
+
+    outline: 0;
+    border: 2px solid transparent;
+    /* border-width: 2px;
+    border-color: #505050; */
+    border-radius: .5rem;
+
+    /* background: transparent; */
+    background-color: #ffffff13;
+    box-shadow: none;
+    color: white;
+
+    font-size: medium;
+    font-family: "Poppins", sans-serif;
+
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+}
+input:hover, input:focus {
+    outline: none;
+    border-color: #517DF4;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #C8C8C8;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #C8C8C8;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #C8C8C8;
 }
 
-.form-control {
-    margin: 20px 0;
-}
-
-.form-control label {
-    display: block;
-}
-
-.form-control input {
-    width: 100%;
-    height: 40px;
-    margin: 5px;
-    padding: 3px 7px;
-    font-size: 17px;
-}
-
-.form-control-check {
+/* .form-control-check {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
-.form-control-check label {
+/* .form-control-check label {
     flex: 1;
-}
+} */
 
-.form-control-check input {
+/* .form-control-check input {
     flex: 2;
     height: 20px;
 } */
+
+
+/* Hide the default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+   
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+}
+   
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #535353;
+    transition: all 0.3s;
+    border-radius: 6px;
+}
+   
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+    background-color: #517DF4;
+    animation: pop 0.5s;
+    animation-direction: alternate;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+   
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+   
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 0.35em;
+    top: 0.15em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid white;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+   
+@keyframes pop {
+    0% {
+     transform: scale(1);
+    }
+   
+    50% {
+     transform: scale(0.85);
+    }
+   
+    100% {
+     transform: scale(1);
+    }
+}
