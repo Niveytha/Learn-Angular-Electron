@@ -4,7 +4,6 @@ h3 {
 
 p {
     margin-bottom: 1%;
-    display: inline-block; 
     color: #9F9FA1;
 }
 
@@ -12,10 +11,16 @@ p {
     display: inline-block; 
 }
 
+#filename {
+    display: flex;
+    justify-content: space-between;
+}
+
 #browse-btn {
-    display: inline-block;
+    /* display: inline-block; */
     background: #6C6C6C;
     color: #DCDCDC;
+    /* float: end; */
 
     width: 90px;
     height: 30px;
@@ -40,7 +45,7 @@ p {
 
 .column {
     float: left;
-    height: 500px; /* !TO BE CHANGED TO % */
+    height: 450px; /* !TO BE CHANGED TO % */
 }
   
 .left {
