@@ -73,22 +73,14 @@ body {
     transform: scale(0.95);
 }
 
-/* .btn-block {
-    display: block;
-    width: 100%;
-} */
-
 .form-group {
     margin-top: 12%;
     padding-bottom: 6%;
 }
 td {
-    /* padding-top: 30px;
-    padding-bottom: 10px; */
     height: 70px;
 }
 label {
-    /* display: block; */
     color: #dcdcdc;
     font-weight: bolder;
     font-size: medium;
@@ -101,11 +93,8 @@ input {
 
     outline: 0;
     border: 2px solid transparent;
-    /* border-width: 2px;
-    border-color: #505050; */
     border-radius: .5rem;
 
-    /* background: transparent; */
     background-color: #ffffff13;
     box-shadow: none;
     color: white;
@@ -129,22 +118,6 @@ input:hover, input:focus {
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: #C8C8C8;
 }
-
-/* .form-control-check {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
-
-/* .form-control-check label {
-    flex: 1;
-} */
-
-/* .form-control-check input {
-    flex: 2;
-    height: 20px;
-} */
-
 
 /* Hide the default checkbox */
 .checkbox-container input {
@@ -170,7 +143,7 @@ input:hover, input:focus {
     left: 0;
     height: 22px;
     width: 22px;
-    background-color: #535353;
+    background-color: #ffffff13;
     transition: all 0.3s;
     border-radius: 6px;
 }
