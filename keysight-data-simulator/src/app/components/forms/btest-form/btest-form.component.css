@@ -1,4 +1,4 @@
-/* .longer-input-field {
-    width: 10000px;
-    height: 42px;
-} */
+input {
+    /* !width: 320px; */
+    width: 200px;
+}
