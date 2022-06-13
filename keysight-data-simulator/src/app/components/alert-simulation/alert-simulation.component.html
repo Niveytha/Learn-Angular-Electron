@@ -1,1 +1,31 @@
-<p>alert-simulation works!</p>
+<div>
+    <div style="display: flex; justify-content: space-between">
+        <h1>Choose an alert to simulate: </h1>
+        <!-- <div class="custom-select" style="width:200px;"> -->
+        <!-- <select>
+            <option value="1">Limit Change</option>
+            <option value="2">Consecutive Test Failure</option>
+            <option value="3">Test Coverage Change</option>
+            <option value="4">Component Anomaly</option>
+            <option value="5">Degradation Anomaly</option>
+        </select> -->
+        <!-- </div> -->
+        <app-dropdown-menu></app-dropdown-menu>
+    </div>
+
+    <p>
+        You will be able to define alert-specific variables once the alert has
+        been chosen.
+    </p>
+
+    <div style="height: 350px;">
+
+    </div>
+
+    <hr class="solid">
+
+    <div class="inline" style="float: right;">
+        <app-button [buttonName]="'Simulate'"
+            [routerLink]="'/end'"></app-button>
+    </div>
+</div>
