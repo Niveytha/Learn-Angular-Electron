@@ -1,35 +1,12 @@
-<!-- <form>
-    <div class="form-group">
-        <label for="uutType">UUT Type: </label>
-        <input id="uutType" type="text" class="form-control"
-            value="1479299-00-D">
-    </div>
-    <div class="form-group">
-        <label for="uutTypeRev">UUT Type Rev: </label>
-        <input id="uutTypeRev" type="text" class="form-control"
-            value="T1">
-    </div>
-    <div class="form-group">
-        <label for="fixtureID">Fixture ID: </label>
-        <input id="fixtureID" type="text" class="form-control"
-            value="593">
-    </div>
-    <div class="form-group">
-        <label for="controller">Controller: </label>
-        <input id="controller" type="text" class="form-control"
-            value="MY58120179">
-    </div>
-</form> -->
-
 <form>
     <table>
-        <tr> </tr>
+        <!-- <tr>{{ title }}</tr> -->
         <tr>
             <td>
                 <label for="uutType">UUT Type:</label>
             </td>
             <td>
-                <input id="uutType" type="text" value="1479299-00-D">
+                <input id="uutType" type="text" value="{{ title }}">
             </td>
         </tr>
         <tr>
