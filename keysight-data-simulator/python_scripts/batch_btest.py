@@ -61,8 +61,9 @@ def menu(uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duratio
 
 
 try:
-    f = open("keysight-data-simulator/python_scripts/i3070_Logs/P1479299-00-D_SPGT19088002596-190503103132-MY58120165-Pass.txt")
-    
+    f = open("keysight-data-simulator/python_scripts/i3070_Logs/P1479299-00-D_SPGT19088002596-190503103132-MY58120165-Pass.txt", 'r')
+    g = open("keysight-data-simulator/python_scripts/i3070_Logs/output_file.txt", 'w') # !CHANGE FILE NAME ACCORDING TO CHANGES
+
     for line in f:
         line = line.split('|')
         
@@ -82,6 +83,12 @@ try:
     uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duration, endTime = menu(uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duration, endTime)
     print("New startTime: " + startTime)
 
+    # TODO: NOT PRINTING ANYTHING
+    for line in f:
+        print(line)
+
+    # TODO: output file is empty!
+    print("Output file has been created!")
 
 finally:
     f.close()
