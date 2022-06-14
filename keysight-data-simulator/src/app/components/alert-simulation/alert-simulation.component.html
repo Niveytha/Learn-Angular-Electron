@@ -1,9 +1,14 @@
+<!-- <head>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head> -->
+<!-- <body> -->
 <div>
     <div style="display: flex; justify-content: space-between">
         <h1>Choose an alert to simulate: </h1>
         <!-- <app-dropdown-menu></app-dropdown-menu> -->
         <div class="custom-select" style="width:240px;">
-            <select required onchange="yesnoCheck(this)">
+            <select name="alert" class="alert" required>
                 <option value="" disabled selected>Alert Type</option>
                 <option value="limit">Limit Change</option>
                 <option value="consecutive">Consecutive Test Failure</option>
@@ -19,9 +24,10 @@
         been chosen.
     </p>
 
-    <!-- <div id="ifYes" style="height: 350px; display: none;">
+    <div class="show" id="limit" style="height: 350px;">
         <h2>PLACEHOLDER</h2>
-    </div> -->
+    </div>
+
     <hr class="solid">
 
     <div class="inline" style="float: right;">
@@ -30,6 +36,19 @@
     </div>
 </div>
 
+<!-- <script>
+        $('.alert').change(function(){
+            var responseID = $(this).val();
+            if (responseID == "limit") {
+                $('#limit').removeClass("hidden");
+                $('#limit').addClass("show");
+            } else {
+                $('#limit').removeClass("show");
+                $('#limit').addClass("hidden");
+            }
+            console.log(responseID);
+        });
+    </script> -->
 <!-- <script>
     function yesnoCheck(that) {
         if (that.value == "other") {
@@ -40,3 +59,4 @@
         }
     }
 </script> -->
+<!-- </body> -->

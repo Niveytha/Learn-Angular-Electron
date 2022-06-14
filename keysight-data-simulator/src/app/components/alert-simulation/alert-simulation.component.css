@@ -1,6 +1,18 @@
+body {
+    background-color: transparent;
+}
+
 p {
     margin-bottom: 5%;
     color: #9F9FA1;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 .custom-select {

@@ -2,6 +2,8 @@ const { app, BrowserWindow } = require("electron");
 const path = require("path");
 const url = require("url");
 
+var electron_1 = require("electron");
+
 let win;
 function createWindow() {
 win = new BrowserWindow({ width: 1300, height: 680 });
@@ -27,3 +29,13 @@ app.on("window-all-closed", () => {
         app.quit();
     }
 });
+
+// electron_1.ipcMain.on('getData', function (event, args) {
+//     event.reply('getDataResponse', {
+//         data: [
+//             {
+//                 name: 'test'
+//             }
+//         ]
+//     });
+// });

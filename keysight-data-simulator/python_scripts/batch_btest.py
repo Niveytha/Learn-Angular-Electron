@@ -53,6 +53,7 @@ def menu(uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duratio
                 start = datetime.strptime(startTime, "%y%m%d%H%M%S")
                 endTime = (start + duration).strftime("%y%m%d%H%M%S")  # !YYMMDDHHMMSS
                 startTime = start.strftime("%y%m%d%H%M%S")  # !YYMMDDHHMMSS
+                duration = str(duration.seconds).zfill(6)
                 print("The new End Datetime is: " + endTime)
             print("Value successfully changed!")
 
@@ -64,31 +65,47 @@ try:
     f = open("keysight-data-simulator/python_scripts/i3070_Logs/P1479299-00-D_SPGT19088002596-190503103132-MY58120165-Pass.txt", 'r')
     g = open("keysight-data-simulator/python_scripts/i3070_Logs/output_file.txt", 'w') # !CHANGE FILE NAME ACCORDING TO CHANGES
 
-    for line in f:
-        line = line.split('|')
-        
-        if line[0].lstrip('{') == '@BATCH':
-            uutType = line[1]
-            uutTypeRev = line[2]
-            fixtureID = line[3]
-            controller = line[9]
-        
-        if line[0].lstrip('{') == '@BTEST':
-            boardID = line[1]
-            startTime = line[3]
-            duration = line[4]
-            endTime = line[10]
+    lines = f.readlines()
+
+    batchLine = lines[0].split('|')
+    btestLine = lines[1].split('|')
+
+    # !Extract initial values
+    uutType = batchLine[1]
+    uutTypeRev = batchLine[2]
+    fixtureID = batchLine[3]
+    controller = batchLine[9]
+
+    boardID = btestLine[1]
+    startTime = btestLine[3]
+    duration = btestLine[4]
+    endTime = btestLine[10]
     
-    print("Old startTime: " + startTime)
+    print("Old Start Datetime: " + startTime)
     uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duration, endTime = menu(uutType, uutTypeRev, fixtureID, controller, boardID, startTime, duration, endTime)
-    print("New startTime: " + startTime)
+    print("New Start Datetime: " + startTime)
 
-    # TODO: NOT PRINTING ANYTHING
-    for line in f:
-        print(line)
+    # !Replace with new values
+    batchLine[1] = uutType
+    batchLine[2] = uutTypeRev
+    batchLine[3] = fixtureID
+    batchLine[9] = controller
 
-    # TODO: output file is empty!
+    btestLine[1] = boardID
+    btestLine[3] = startTime
+    btestLine[4] = duration
+    btestLine[10] = endTime
+
+    # !Does not modify original file
+    lines[0] = '|'.join(batchLine)
+    lines[1] = '|'.join(btestLine)
+
+    for line in lines:
+        g.write(line)
+
     print("Output file has been created!")
-
-finally:
+except:
+    raise Exception("Please recheck @BATCH & @BATCH in file.")
+else:
     f.close()
+    g.close()
