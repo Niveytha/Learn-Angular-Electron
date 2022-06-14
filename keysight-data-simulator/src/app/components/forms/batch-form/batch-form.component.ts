@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BatchFormComponent implements OnInit {
-    title: string = '1479299-00-D';
+    // title: string = '1479299-00-D';
 
     constructor() { }
 

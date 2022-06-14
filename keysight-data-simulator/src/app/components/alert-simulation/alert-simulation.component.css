@@ -2,3 +2,36 @@ p {
     margin-bottom: 5%;
     color: #9F9FA1;
 }
+
+.custom-select {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    /* font-family: Poppins; */
+}
+
+select:required:invalid {
+    color: #9F9FA1;
+}
+
+select {
+    /* appearance: none; */
+    height: 40px;
+    width: 240px;
+    padding-left: 10px;
+
+    background-color: #464646;
+    color: #ffffff;
+    font-size: medium;
+    font-family: "Poppins", sans-serif;
+
+    border: none;
+    border-radius: 6px;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+/* option {
+    color: black;
+} */
