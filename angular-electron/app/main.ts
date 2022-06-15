@@ -1,14 +1,19 @@
-import { app, BrowserWindow, screen } from 'electron';
+import { app, BrowserWindow, screen, Menu, MenuItem, ipcMain } from 'electron';
+import { spawn } from 'child_process';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as url from 'url';
 
+const { PythonShell } = require('python-shell');
+
+const express = require('express');
 let win: BrowserWindow = null;
+
+let largeDataSet = [];
 const args = process.argv.slice(1),
-  serve = args.some(val => val === '--serve');
+  serve = args.some((val) => val === '--serve');
 
 function createWindow(): BrowserWindow {
-
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
 
@@ -16,18 +21,18 @@ function createWindow(): BrowserWindow {
   win = new BrowserWindow({
     x: 0,
     y: 0,
-    width: size.width,
-    height: size.height,
+    width: 1300,
+    height: 680,
     webPreferences: {
       nodeIntegration: true,
-      allowRunningInsecureContent: (serve) ? true : false,
-      contextIsolation: false,  // false if you want to run e2e test with Spectron
+      allowRunningInsecureContent: serve ? true : false,
+      contextIsolation: false, // false if you want to run e2e test with Spectron
     },
   });
 
   if (serve) {
-    const debug = require('electron-debug');
-    debug();
+    // const debug = require('electron-debug');
+    // debug();
 
     require('electron-reloader')(module);
     win.loadURL('http://localhost:4200');
@@ -36,15 +41,17 @@ function createWindow(): BrowserWindow {
     let pathIndex = './index.html';
 
     if (fs.existsSync(path.join(__dirname, '../dist/index.html'))) {
-       // Path when running electron in local folder
+      // Path when running electron in local folder
       pathIndex = '../dist/index.html';
     }
 
-    win.loadURL(url.format({
-      pathname: path.join(__dirname, pathIndex),
-      protocol: 'file:',
-      slashes: true
-    }));
+    win.loadURL(
+      url.format({
+        pathname: path.join(__dirname, pathIndex),
+        protocol: 'file:',
+        slashes: true,
+      })
+    );
   }
 
   // Emitted when the window is closed.
@@ -57,6 +64,43 @@ function createWindow(): BrowserWindow {
 
   return win;
 }
+
+ipcMain.on('getData', (event, args) => {
+  let pathIndex = '../src/assets/scripts';
+  let options = {
+    mode: 'text',
+    pythonOptions: ['-u'], // get print results in real-time
+    scriptPath: path.join(__dirname, pathIndex),
+    args: args, //An argument which can be accessed in the script using sys.argv[1]
+  };
+
+  // Method 1 (Run Python Scripts)
+  PythonShell.run('script1.py', options, (err, result) => {
+    if (err) throw err;
+    // result is an array consisting of messages collected
+    //during execution of script.
+    console.log('result: ', result.toString());
+
+    // Return Data To Angular
+    event.reply('getDataResponse', result);
+  });
+});
+
+/*********************************************************************
+try {
+  // Method 2 (Run Python Scripts)
+  let pathIndex = '../src/assets/scripts/script1.py';
+
+  const python = spawn('python', [path.join(__dirname, pathIndex), 'node.js', 'python']);
+
+  python.stdout.on('data', (data) => {
+    console.log('Pipe data from python script ...', data);
+    largeDataSet.push(data);
+  });
+} catch (e) {
+  throw e;
+}
+*********************************************************************/
 
 try {
   // This method will be called when Electron has finished
@@ -81,7 +125,6 @@ try {
       createWindow();
     }
   });
-
 } catch (e) {
   // Catch Error
   // throw e;

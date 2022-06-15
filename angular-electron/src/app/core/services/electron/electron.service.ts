@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 
 // If you import a module but never use any of the imported values other than as TypeScript types,
 // the resulting javascript file will look as if you never imported the module at all.
-import { ipcRenderer, webFrame } from 'electron';
+import { ipcRenderer, webFrame, dialog } from 'electron';
 import * as childProcess from 'child_process';
 import * as fs from 'fs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class ElectronService {
   webFrame: typeof webFrame;
   childProcess: typeof childProcess;
   fs: typeof fs;
+  dialog: typeof dialog;
 
   constructor() {
     // Conditional imports
@@ -41,4 +43,20 @@ export class ElectronService {
   get isElectron(): boolean {
     return !!(window && window.process && window.process.type);
   }
+
+  sendData(data) {
+    this.ipcRenderer.send('getData', data);
+  }
+
+  getData(): Observable<any> {
+    return new Observable<any>(observer => {
+      this.ipcRenderer.once('getDataResponse', (event, arg) => {
+        observer.next(arg);
+      });
+    });
+  }
 }
+
+
+
+

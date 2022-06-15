@@ -1,0 +1,42 @@
+<div>
+    <div style="display: flex; justify-content: space-between">
+        <h1>Choose an alert to simulate: </h1>
+        <!-- <app-dropdown-menu></app-dropdown-menu> -->
+        <div class="custom-select" style="width:240px;">
+            <select required onchange="yesnoCheck(this)">
+                <option value="" disabled selected>Alert Type</option>
+                <option value="limit">Limit Change</option>
+                <option value="consecutive">Consecutive Test Failure</option>
+                <option value="testCoverage">Test Coverage Change</option>
+                <option value="component">Component Anomaly</option>
+                <option value="degradation">Degradation Anomaly</option>
+            </select>
+        </div>
+    </div>
+
+    <p>
+        You will be able to define alert-specific variables once the alert has
+        been chosen.
+    </p>
+
+    <!-- <div id="ifYes" style="height: 350px; display: none;">
+        <h2>PLACEHOLDER</h2>
+    </div> -->
+    <hr class="solid">
+
+    <div class="inline" style="float: right;">
+        <app-button [buttonName]="'Simulate'"
+            [routerLink]="'/end'"></app-button>
+    </div>
+</div>
+
+<!-- <script>
+    function yesnoCheck(that) {
+        if (that.value == "other") {
+            alert("check");
+            document.getElementById("ifYes").style.display = "block";
+        } else {
+            document.getElementById("ifYes").style.display = "none";
+        }
+    }
+</script> -->

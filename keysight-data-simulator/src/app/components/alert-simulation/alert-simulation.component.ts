@@ -13,12 +13,9 @@ export class AlertSimulationComponent implements OnInit {
   ngOnInit(): void {
     $(function() {
       $('#alert').on('change', function() {
-        // alert($(this).val());
         $(".data").hide();
         $("#" + $(this).val()).fadeIn(300);
       })
     });
-
   }
-
 }
