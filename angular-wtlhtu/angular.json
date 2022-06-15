@@ -116,5 +116,8 @@
       }
     }
   },
-  "defaultProject": "angular-wtlhtu"
+  "defaultProject": "angular-wtlhtu",
+  "cli": {
+    "analytics": false
+  }
 }
