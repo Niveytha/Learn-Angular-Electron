@@ -21,6 +21,10 @@ p {
     position: relative;
 }
 
+.data {
+    display: none;
+}
+
 select:required:invalid {
     color: #9F9FA1;
 }
