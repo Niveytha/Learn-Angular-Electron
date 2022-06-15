@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-// declare function greet(): void;
+declare function greet(): void;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title : string = 'Keysight Data Simulator';
 
+  // Using CDNs
+  // myScriptElement: HTMLScriptElement;
   constructor() {
-    // greet();
+    greet();
+    // this.myScriptElement = document.createElement("script");
+    // this.myScriptElement.src = "...";
+    // document.body.appendChild(this.myScriptElement);
   }
 }
