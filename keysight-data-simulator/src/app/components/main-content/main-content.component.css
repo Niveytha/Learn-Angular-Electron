@@ -33,14 +33,23 @@ p {
     box-shadow: 2px 2px 7px #00000055 inset;
 }
 
-.container {
+/* .container {
     background-color: #464646;
     width: 90px;
     height: 35px;
     border-radius: 6px;
 
     margin-top: 5px;
-    margin-top: 5px;
+} */
+
+.batchBtestLabel {
+    background-color: #464646;
+    width: 90px;
+    height: 35px;
+    border-radius: 6px;
+
+    padding-top: 6px;
+    text-align: center;
 }
 
 .column {
