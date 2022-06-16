@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "keysight-data-simulator"
+  "defaultProject": "keysight-data-simulator",
+  "cli": {
+    "analytics": false
+  }
 }
